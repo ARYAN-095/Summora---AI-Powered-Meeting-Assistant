@@ -3,12 +3,13 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyATwDeC1anQ6pStJXhSODibBWQYErqWehU",
+  authDomain: "summora-cb5ad.firebaseapp.com",
+  projectId: "summora-cb5ad",
+  storageBucket: "summora-cb5ad.firebasestorage.app",
+  messagingSenderId: "545658518766",
+  appId: "1:545658518766:web:9cc596223db71da48907ff",
+  measurementId: "G-TPDEWT1ZPC"
 };
 
 // Initialize Firebase
