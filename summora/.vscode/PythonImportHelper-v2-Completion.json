@@ -61,46 +61,46 @@
     {
         "label": "process_video_endpoint",
         "kind": 2,
-        "importPath": "ai-service.venv.app",
-        "description": "ai-service.venv.app",
+        "importPath": "ai-service.app",
+        "description": "ai-service.app",
         "peekOfCode": "def process_video_endpoint():\n    if 'recording' not in request.files:\n        return jsonify({\"error\": \"No file part in the request\"}), 400\n    file = request.files['recording']\n    if file.filename == '':\n        return jsonify({\"error\": \"No selected file\"}), 400\n    try:\n        # 1. Upload to AssemblyAI\n        headers = {'authorization': ASSEMBLYAI_API_KEY}\n        upload_resp = requests.post(",
-        "detail": "ai-service.venv.app",
+        "detail": "ai-service.app",
         "documentation": {}
     },
     {
         "label": "transcription_complete_webhook",
         "kind": 2,
-        "importPath": "ai-service.venv.app",
-        "description": "ai-service.venv.app",
+        "importPath": "ai-service.app",
+        "description": "ai-service.app",
         "peekOfCode": "def transcription_complete_webhook():\n    data = request.json or {}\n    if data.get('status') != 'completed':\n        return jsonify({\"status\": \"ignored\"}), 200\n    transcript_text = data.get('text', '')\n    try:\n        prompt = f\"\"\"\nBased on the following meeting transcript, please provide:\n1. A concise 3–5 bullet summary of key points.\n2. A list of action items with assignees if mentioned.",
-        "detail": "ai-service.venv.app",
+        "detail": "ai-service.app",
         "documentation": {}
     },
     {
         "label": "app",
         "kind": 5,
-        "importPath": "ai-service.venv.app",
-        "description": "ai-service.venv.app",
+        "importPath": "ai-service.app",
+        "description": "ai-service.app",
         "peekOfCode": "app = Flask(__name__)\n# --- Configuration (from .env) ---\nASSEMBLYAI_API_KEY = os.getenv(\"ASSEMBLYAI_API_KEY\")\nGEMINI_API_KEY     = os.getenv(\"GEMINI_API_KEY\")\nNGROK_URL          = \"https://592ee92cb980.ngrok-free.app\"\n# Validate config\nif not ASSEMBLYAI_API_KEY or not GEMINI_API_KEY or not NGROK_URL:\n    raise ValueError(\"Please set ASSEMBLYAI_API_KEY, GEMINI_API_KEY, and NGROK_URL in your .env file.\")\nASSEMBLYAI_API_URL = \"https://api.assemblyai.com/v2\"\nGEMINI_API_URL    = (",
-        "detail": "ai-service.venv.app",
+        "detail": "ai-service.app",
         "documentation": {}
     },
     {
         "label": "ASSEMBLYAI_API_KEY",
         "kind": 5,
-        "importPath": "ai-service.venv.app",
-        "description": "ai-service.venv.app",
+        "importPath": "ai-service.app",
+        "description": "ai-service.app",
         "peekOfCode": "ASSEMBLYAI_API_KEY = os.getenv(\"ASSEMBLYAI_API_KEY\")\nGEMINI_API_KEY     = os.getenv(\"GEMINI_API_KEY\")\nNGROK_URL          = \"https://592ee92cb980.ngrok-free.app\"\n# Validate config\nif not ASSEMBLYAI_API_KEY or not GEMINI_API_KEY or not NGROK_URL:\n    raise ValueError(\"Please set ASSEMBLYAI_API_KEY, GEMINI_API_KEY, and NGROK_URL in your .env file.\")\nASSEMBLYAI_API_URL = \"https://api.assemblyai.com/v2\"\nGEMINI_API_URL    = (\n    f\"https://generativelanguage.googleapis.com/v1beta/models/\"\n    f\"gemini-1.5-flash-latest:generateContent?key={GEMINI_API_KEY}\"",
-        "detail": "ai-service.venv.app",
+        "detail": "ai-service.app",
         "documentation": {}
     },
     {
         "label": "ASSEMBLYAI_API_URL",
         "kind": 5,
-        "importPath": "ai-service.venv.app",
-        "description": "ai-service.venv.app",
+        "importPath": "ai-service.app",
+        "description": "ai-service.app",
         "peekOfCode": "ASSEMBLYAI_API_URL = \"https://api.assemblyai.com/v2\"\nGEMINI_API_URL    = (\n    f\"https://generativelanguage.googleapis.com/v1beta/models/\"\n    f\"gemini-1.5-flash-latest:generateContent?key={GEMINI_API_KEY}\"\n)\n# === ENDPOINTS ===\n@app.route('/process-video', methods=['POST'])\ndef process_video_endpoint():\n    if 'recording' not in request.files:\n        return jsonify({\"error\": \"No file part in the request\"}), 400",
-        "detail": "ai-service.venv.app",
+        "detail": "ai-service.app",
         "documentation": {}
     },
     {

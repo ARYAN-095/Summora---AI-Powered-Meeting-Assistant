@@ -1,0 +1,151 @@
+[
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "process_video_endpoint",
+        "kind": 2,
+        "importPath": "summora.ai-service.app",
+        "description": "summora.ai-service.app",
+        "peekOfCode": "def process_video_endpoint():\n    if 'recording' not in request.files:\n        return jsonify({\"error\": \"No file part\"}), 400\n    file = request.files['recording']\n    if not file.filename:\n        return jsonify({\"error\": \"No selected file\"}), 400\n    headers = {'authorization': ASSEMBLYAI_API_KEY}\n    # 1. Upload to AssemblyAI\n    print(\"\\n⏳ Uploading to AssemblyAI...\")\n    upload_resp = requests.post(f\"{ASSEMBLYAI_API_URL}/upload\",",
+        "detail": "summora.ai-service.app",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "summora.ai-service.app",
+        "description": "summora.ai-service.app",
+        "peekOfCode": "app = Flask(__name__)\n# Config\nASSEMBLYAI_API_KEY = os.getenv(\"ASSEMBLYAI_API_KEY\")\nGEMINI_API_KEY     = os.getenv(\"GEMINI_API_KEY\")\nNGROK_URL          = os.getenv(\"NGROK_URL\")\nif not (ASSEMBLYAI_API_KEY and GEMINI_API_KEY and NGROK_URL):\n    raise ValueError(\"Missing ASSEMBLYAI_API_KEY, GEMINI_API_KEY, or NGROK_URL\")\nASSEMBLYAI_API_URL = \"https://api.assemblyai.com/v2\"\nGEMINI_API_URL = (\n    f\"https://generativelanguage.googleapis.com/v1beta/models/\"",
+        "detail": "summora.ai-service.app",
+        "documentation": {}
+    },
+    {
+        "label": "ASSEMBLYAI_API_KEY",
+        "kind": 5,
+        "importPath": "summora.ai-service.app",
+        "description": "summora.ai-service.app",
+        "peekOfCode": "ASSEMBLYAI_API_KEY = os.getenv(\"ASSEMBLYAI_API_KEY\")\nGEMINI_API_KEY     = os.getenv(\"GEMINI_API_KEY\")\nNGROK_URL          = os.getenv(\"NGROK_URL\")\nif not (ASSEMBLYAI_API_KEY and GEMINI_API_KEY and NGROK_URL):\n    raise ValueError(\"Missing ASSEMBLYAI_API_KEY, GEMINI_API_KEY, or NGROK_URL\")\nASSEMBLYAI_API_URL = \"https://api.assemblyai.com/v2\"\nGEMINI_API_URL = (\n    f\"https://generativelanguage.googleapis.com/v1beta/models/\"\n    f\"gemini-1.5-flash-latest:generateContent?key={GEMINI_API_KEY}\"\n)",
+        "detail": "summora.ai-service.app",
+        "documentation": {}
+    },
+    {
+        "label": "ASSEMBLYAI_API_URL",
+        "kind": 5,
+        "importPath": "summora.ai-service.app",
+        "description": "summora.ai-service.app",
+        "peekOfCode": "ASSEMBLYAI_API_URL = \"https://api.assemblyai.com/v2\"\nGEMINI_API_URL = (\n    f\"https://generativelanguage.googleapis.com/v1beta/models/\"\n    f\"gemini-1.5-flash-latest:generateContent?key={GEMINI_API_KEY}\"\n)\n@app.route('/process-video', methods=['POST'])\ndef process_video_endpoint():\n    if 'recording' not in request.files:\n        return jsonify({\"error\": \"No file part\"}), 400\n    file = request.files['recording']",
+        "detail": "summora.ai-service.app",
+        "documentation": {}
+    },
+    {
+        "label": "GEMINI_API_URL",
+        "kind": 5,
+        "importPath": "summora.ai-service.app",
+        "description": "summora.ai-service.app",
+        "peekOfCode": "GEMINI_API_URL = (\n    f\"https://generativelanguage.googleapis.com/v1beta/models/\"\n    f\"gemini-1.5-flash-latest:generateContent?key={GEMINI_API_KEY}\"\n)\n@app.route('/process-video', methods=['POST'])\ndef process_video_endpoint():\n    if 'recording' not in request.files:\n        return jsonify({\"error\": \"No file part\"}), 400\n    file = request.files['recording']\n    if not file.filename:",
+        "detail": "summora.ai-service.app",
+        "documentation": {}
+    },
+    {
+        "label": "_Known",
+        "kind": 6,
+        "importPath": "summora.node_modules.flatted.python.flatted",
+        "description": "summora.node_modules.flatted.python.flatted",
+        "peekOfCode": "class _Known:\n    def __init__(self):\n        self.key = []\n        self.value = []\nclass _String:\n    def __init__(self, value):\n        self.value = value\ndef _array_keys(value):\n    keys = []\n    i = 0",
+        "detail": "summora.node_modules.flatted.python.flatted",
+        "documentation": {}
+    },
+    {
+        "label": "_String",
+        "kind": 6,
+        "importPath": "summora.node_modules.flatted.python.flatted",
+        "description": "summora.node_modules.flatted.python.flatted",
+        "peekOfCode": "class _String:\n    def __init__(self, value):\n        self.value = value\ndef _array_keys(value):\n    keys = []\n    i = 0\n    for _ in value:\n        keys.append(i)\n        i += 1\n    return keys",
+        "detail": "summora.node_modules.flatted.python.flatted",
+        "documentation": {}
+    },
+    {
+        "label": "parse",
+        "kind": 2,
+        "importPath": "summora.node_modules.flatted.python.flatted",
+        "description": "summora.node_modules.flatted.python.flatted",
+        "peekOfCode": "def parse(value, *args, **kwargs):\n    json = _json.loads(value, *args, **kwargs)\n    wrapped = []\n    for value in json:\n        wrapped.append(_wrap(value))\n    input = []\n    for value in wrapped:\n        if isinstance(value, _String):\n            input.append(value.value)\n        else:",
+        "detail": "summora.node_modules.flatted.python.flatted",
+        "documentation": {}
+    },
+    {
+        "label": "stringify",
+        "kind": 2,
+        "importPath": "summora.node_modules.flatted.python.flatted",
+        "description": "summora.node_modules.flatted.python.flatted",
+        "peekOfCode": "def stringify(value, *args, **kwargs):\n    known = _Known()\n    input = []\n    output = []\n    i = int(_index(known, input, value))\n    while i < len(input):\n        output.append(_transform(known, input, input[i]))\n        i += 1\n    return _json.dumps(output, *args, **kwargs)",
+        "detail": "summora.node_modules.flatted.python.flatted",
+        "documentation": {}
+    }
+]

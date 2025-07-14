@@ -7,3 +7,20 @@ ngrok http 5000
 
 
 Frontend → Node.js Gateway → Python AI Service → AssemblyAI → ngrok → Python AI Service → Gemini → Python Console Log.
+
+ngrok
+Y2RW7UNABF
+RP88TFB34Z
+KQYHMRX6TR
+9YUH3F3V66
+CQJM5QAPMP
+TQUB6YYC5F
+JSAC3AFSRJ
+FCBF9GPZDB
+DM75PN9ZB9
+V9US47B9F7
+
+2zrlWj2nMVYS326jGKM5atgsGRp_5VhbE6obHULT4dndur5n1
+
+
+curl -X POST -F "recording=@C:\Users\ARYAN SHUKLA\Desktop\Projects\Summora\summora\test\test.mp4" http://localhost:5000/process-video
