@@ -10,7 +10,7 @@ app = Flask(__name__)
 # --- Configuration (from .env) ---
 ASSEMBLYAI_API_KEY = os.getenv("ASSEMBLYAI_API_KEY")
 GEMINI_API_KEY     = os.getenv("GEMINI_API_KEY")
-NGROK_URL          = os.getenv("NGROK_URL")
+NGROK_URL          = "https://592ee92cb980.ngrok-free.app"
 
 # Validate config
 if not ASSEMBLYAI_API_KEY or not GEMINI_API_KEY or not NGROK_URL:
