@@ -11,17 +11,17 @@ interface RecordingControlsProps {
 export default function RecordingControls({ isRecording, mediaStream, onStart, onStop }: RecordingControlsProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  // Effect to attach the media stream to the video element
   useEffect(() => {
     if (videoRef.current && mediaStream) {
       videoRef.current.srcObject = mediaStream;
+      console.log("Attaching media stream to video element");
     }
   }, [mediaStream]);
 
   return (
     <div className="bg-gray-900/50 p-6 rounded-lg border border-gray-700">
       <div className="aspect-video bg-black rounded-md mb-4 relative overflow-hidden">
-        <video ref={videoRef} autoPlay muted className="w-full h-full object-cover"></video>
+        <video ref={videoRef} autoPlay muted playsInline className="w-full h-full object-cover" />
         {!mediaStream && (
           <div className="absolute inset-0 flex items-center justify-center text-gray-500">
             <Icon path="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9A2.25 2.25 0 004.5 18.75z" className="w-16 h-16" />
