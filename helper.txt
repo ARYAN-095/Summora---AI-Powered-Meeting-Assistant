@@ -1,2 +1,9 @@
 python -m venv venv
 .\venv\Scripts\activate
+
+flask run
+ngrok http 5000
+
+
+
+Frontend → Node.js Gateway → Python AI Service → AssemblyAI → ngrok → Python AI Service → Gemini → Python Console Log.
